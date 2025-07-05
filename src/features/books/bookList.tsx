@@ -3,7 +3,7 @@ import { useGetBooksQuery, useDeleteBookMutation } from './booksApi';
 
 const BookList = () => {
   const { data, isLoading } = useGetBooksQuery();
-const books = data?.data || [];
+const books = data || [];
   const [deleteBook] = useDeleteBookMutation();
   const navigate = useNavigate();
 

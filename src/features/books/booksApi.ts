@@ -6,10 +6,11 @@ export const booksApi = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: 'https://library-api-pied.vercel.app/api/' }),
   tagTypes: ['Books'],
   endpoints: (builder) => ({
-    getBooks: builder.query<Book[], void>({
-      query: () => 'books',
-      providesTags: ['Books'],
-    }),
+
+getBooks: builder.query<Book[], void>({
+  query: () => '/books',
+  transformResponse: (response: { success: boolean; data: Book[] }) => response.data,
+}),
     getBook: builder.query<Book, string>({
       query: (id) => `books/${id}`,
     }),

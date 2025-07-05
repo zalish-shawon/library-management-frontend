@@ -30,6 +30,7 @@ const BorrowBookPage = () => {
 
     try {
       console.log({ bookId, ...formData });
+      // @ts-ignore 
       await borrowBook({ book: bookId, ...formData }).unwrap();
       alert('Book borrowed successfully!');
       navigate('/borrow-summary');

@@ -26,6 +26,7 @@ const EditBookPage = () => {
   useEffect(() => {
     if (book) {
       // Handle both flat object and nested data structure
+      // @ts-ignore
       const bookData = book.data || book
       setFormData({
         title: bookData.title || "",
