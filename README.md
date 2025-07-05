@@ -1,69 +1,79 @@
-# React + TypeScript + Vite
+# 📚 Library Management System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A minimalist, responsive Library Management System built using React, TypeScript, Redux Toolkit (RTK Query), and Tailwind CSS. Users can manage books and borrowing records with ease.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### 🚀 Live API Base URL
 
-## Expanding the ESLint configuration
+https://library-api-pied.vercel.app/api
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+## 🖼️ Features
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### 📘 Book Management
+- View all books in a responsive table
+- Add new books with form validation
+- Edit existing book details
+- Delete books with confirmation
+- Borrow books with quantity & due date
+- Auto-update availability when copies reach 0
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 📥 Borrow Summary
+- View total borrowed quantity per book
+- Aggregated summary view via backend API
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### 🧭 Routing (via React Router DOM)
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+| Route               | Description                      |
+|---------------------|----------------------------------|
+| `/books`            | View all books                   |
+| `/create-book`      | Add a new book                   |
+| `/books/:id`        | View single book details         |
+| `/edit-book/:id`    | Edit a book                      |
+| `/borrow/:bookId`   | Borrow a specific book           |
+| `/borrow-summary`   | View borrow summary              |
+
+---
+
+## 🛠️ Tech Stack
+
+| Layer        | Technology                          |
+|--------------|--------------------------------------|
+| Frontend     | React + TypeScript                   |
+| UI           | Tailwind CSS                         |
+| Routing      | React Router DOM                     |
+| State Mgmt   | Redux Toolkit + RTK Query            |
+| Backend API  | Express + MongoDB (hosted on Vercel) |
+
+---
+
+---
+
+## 🧪 Getting Started
+
+### ✅ Prerequisites
+
+- Node.js ≥ 18
+- npm or yarn
+
+---
+
+### 📦 Installation
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/your-username/library-management.git
+
+# 2. Navigate to the project folder
+cd library-management
+
+# 3. Install dependencies
+npm install
+
+# 4. Start the dev server
+npm run dev
+
+
