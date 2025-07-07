@@ -27,7 +27,7 @@ const BookListPage = () => {
   if (isLoading) return <p>Loading books...</p>;
 
   return (
-    <div className="overflow-x-auto">
+    <div className="container mx-auto overflow-x-auto">
       <h2 className="text-2xl font-semibold mb-4 text-center">📚 Book List</h2>
       <table className="min-w-full table-auto border rounded-md shadow-sm bg-white">
         <thead>
