@@ -9,6 +9,7 @@ export const booksApi = createApi({
 
 getBooks: builder.query<Book[], void>({
   query: () => '/books',
+  providesTags: ['Books'],
   transformResponse: (response: { success: boolean; data: Book[] }) => response.data,
 }),
     getBook: builder.query<Book, string>({
